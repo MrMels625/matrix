@@ -5,7 +5,11 @@ int main()
 {
   size_t M = 0, N = 0;
   std::cin >> M >> N;
-
+  if (!std::cin)
+  {
+    std::cerr << "ERROR: Input was wrong!\n";
+    return 1;
+  }
   int** matrix = nullptr;
   try
   {
@@ -26,5 +30,4 @@ int main()
   writeMatrix(matrix, M, N);
   destroyMatrix(matrix, M);
 }
-
 
