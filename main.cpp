@@ -15,8 +15,16 @@ int main()
     destroyMatrix(matrix, M);
     return 1;
   }
-  readMatrix(matrix, M, N);
+  try
+  {
+    readMatrix(matrix, M, N);
+  } catch (const char* e) {
+    std::cerr << e;
+    destroyMatrix(matrix, M);
+    return 1;
+  }
   writeMatrix(matrix, M, N);
   destroyMatrix(matrix, M);
 }
+
 

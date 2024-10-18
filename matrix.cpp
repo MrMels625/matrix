@@ -35,6 +35,10 @@ void readMatrix(int** matrix, size_t m, size_t n)
     for (size_t j = 0; j < n; j++)
     {
       std::cin >> matrix[i][j];
+      if (!std::cin)
+      {
+        throw "ERROR: Input was wrong!\n";
+      }
     }
   }
 }
