@@ -10,7 +10,7 @@ int main()
   try
   {
     matrix = createMatrix(M, N);
-  } catch (const std::bad_alloc & e) {
+  } catch (const std::bad_alloc &e) {
     std::cerr << "ERROR: Out of memory!\n";
     destroyMatrix(matrix, M);
     return 1;
@@ -19,3 +19,4 @@ int main()
   writeMatrix(matrix, M, N);
   destroyMatrix(matrix, M);
 }
+

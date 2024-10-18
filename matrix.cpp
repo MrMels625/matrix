@@ -21,7 +21,7 @@ int** createMatrix(size_t m, size_t n)
       matrix[created] = new int[n];
     }
   }
-  catch (const std::bad_alloc & e) {
+  catch (const std::bad_alloc &e) {
     destroyMatrix(matrix, created);
     throw;
   }
@@ -51,3 +51,4 @@ void writeMatrix(const int* const* matrix, size_t m, size_t n)
     std::cout << "\n";
   }
 }
+
