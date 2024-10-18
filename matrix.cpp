@@ -1,7 +1,7 @@
 #include <iostream>
 #include "matrix.hpp"
 
-void destroyMatrix(int** matrix, size_t n)
+void destroyMatrix(int** matrix, size_t m)
 {
   for (size_t i = 0; i < m; i++)
   {
