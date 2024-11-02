@@ -1,33 +1,26 @@
 #include <iostream>
-#include "matrix.hpp"
+#include "matrix.h"
+#include "mtx.h"
 
 int main()
 {
-  size_t M = 0, N = 0;
-  std::cin >> M >> N;
+  size_t m = 0, n = 0;
+  std::cin >> m >> n;
   if (!std::cin)
   {
-    std::cerr << "ERROR: Input was wrong!\n";
+    std::cerr << "ERROR: Input was incorrect!\n";
     return 1;
   }
-  int** matrix = nullptr;
   try
   {
-    matrix = createMatrix(M, N);
-  } catch (const std::bad_alloc &e) {
+    Matrix mtx(m, n);
+    Matrix mtx2(mtx);
+    mtx2.readMatrix(std::cin);
+    mtx2.writeMatrix(std::cout);
+  }
+  catch (const std::bad_alloc& e)
+  {
     std::cerr << "ERROR: Out of memory!\n";
-    destroyMatrix(matrix, M);
     return 1;
   }
-  try
-  {
-    readMatrix(matrix, M, N);
-  } catch (const char* e) {
-    std::cerr << e;
-    destroyMatrix(matrix, M);
-    return 1;
-  }
-  writeMatrix(matrix, M, N);
-  destroyMatrix(matrix, M);
 }
-

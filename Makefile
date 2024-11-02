@@ -1,2 +1,2 @@
-matrix: main.cpp matrix.cpp
-	g++ main.cpp matrix.cpp -o matrix
+matrix: main.cpp matrix.cpp mtx.cpp
+	g++ main.cpp matrix.cpp mtx.cpp -o matrix
