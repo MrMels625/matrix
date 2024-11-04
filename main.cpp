@@ -18,9 +18,10 @@ int main()
     std::cout << "Number of rows: " << mtx.getRows() << "\n";
     std::cout << "Number of columns: " << mtx.getColumns() << "\n";
 
-    std::cout << "Enter some numbers to fill in the matrix with current size: ";
+    std::cout << "Enter some numbers to fill in the matrix with current size:\n";
     mtx.read(std::cin);
     std::cout << "\n";
+
     std::cout << "Matrix filled in with entered numbers:\n";
     mtx.write(std::cout);
 
@@ -38,4 +39,9 @@ int main()
     std::cerr << "ERROR: Out of memory!\n";
     return 1;
   }
+  catch (const char* e)
+  {
+    std::cerr << e;
+  }
 }
+

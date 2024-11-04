@@ -34,7 +34,10 @@ void readMatrix(std::istream& input, int** matrix, size_t m, size_t n)
   {
     for (size_t j = 0; j < n; j++)
     {
-      input >> matrix[i][j];
+      if (!(input >> matrix[i][j]))
+      {
+        throw "ERROR: Input was incorrect!\n";
+      }
     }
   }
 }
