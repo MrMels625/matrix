@@ -16,12 +16,26 @@ Matrix::Matrix(const Matrix& rhs):
   ::copyMatrix(rhs.t_, t_, m_, n_);
 }
 
-void Matrix::readMatrix(std::istream& input)
+void Matrix::read(std::istream& input)
 {
   ::readMatrix(input, t_, m_, n_);
 }
 
-void Matrix::writeMatrix(std::ostream& output) const
+void Matrix::write(std::ostream& output) const
 {
   ::writeMatrix(output, t_, m_, n_);
 }
+
+size_t Matrix::getRows() const
+{
+  return m_;
+}
+
+size_t Matrix::getColumns() const
+{
+  return n_;
+}
+
+void Matrix::fillIn()
+{}
+

@@ -14,9 +14,10 @@ int main()
   try
   {
     Matrix mtx(m, n);
-    Matrix mtx2(mtx);
-    mtx2.readMatrix(std::cin);
-    mtx2.writeMatrix(std::cout);
+    mtx.read(std::cin);
+    mtx.write(std::cout);
+    std::cout << mtx.getRows() << "\n";
+    std::cout << mtx.getColumns() << "\n";
   }
   catch (const std::bad_alloc& e)
   {
