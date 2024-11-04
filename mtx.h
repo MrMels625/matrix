@@ -16,7 +16,8 @@ class Matrix
   void write(std::ostream& output) const;
   size_t getRows() const;
   size_t getColumns() const;
-  void fillIn();
+  void fillIn(size_t num);
+  void changeSize(size_t mNew, size_t nNew);
 };
 
 #endif

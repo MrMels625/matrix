@@ -36,6 +36,22 @@ size_t Matrix::getColumns() const
   return n_;
 }
 
-void Matrix::fillIn()
-{}
+void Matrix::fillIn(size_t num)
+{
+  for (size_t i = 0; i < m_; ++i)
+  {
+    for (size_t j = 0; j < n_; ++j)
+    {
+      t_[i][j] = num;
+    }
+  }
+}
+
+void Matrix::changeSize(size_t mNew, size_t nNew)
+{
+  ::destroyMatrix(t_, m_);
+  m_ = mNew;
+  n_ = nNew;
+  t_ = ::createMatrix(m_, n_);
+}
 

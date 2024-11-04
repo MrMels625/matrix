@@ -50,6 +50,7 @@ void writeMatrix(std::ostream& output, const int* const* matrix, size_t m, size_
     }
     output << "\n";
   }
+  output << "\n";
 }
 
 void copyMatrix(int** matrix, int** newMatrix, size_t m, size_t n) 
